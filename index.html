@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <h1>Titulo do site</h1>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="nav navbar-nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button id="btn-checar-emails" type="button" class="btn btn-warning">Checar caixa de mensagens</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div id="carousel-exemplo" class="carousel carousel-fade slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div data-bs-interval="3000" class="carousel-item active">
+                    <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2024/01/29/19/38/mountains-8540699_1280.jpg" />
+                    <div class="carousel-caption">
+                        <h2>Mountains</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2024/12/06/22/29/autumn-9249885_1280.jpg" />
+                    <div class="carousel-caption">
+                        <h2>Forrest</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2024/02/02/11/22/mosque-8547944_1280.jpg" /> 
+                    <div class="carousel-caption">
+                        <h2>Temple</h2>
+                    </div>
+                </div>
+            </div>
+            <button data-bs-target="#carousel-exemplo" data-bs-slide="prev" class="carousel-control-prev" type="button">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button data-bs-target="#carousel-exemplo" data-bs-slide="next" class="carousel-control-next" type="button">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel-exemplo" class="active" data-bs-slide-to="0"></button>
+                <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <article class="card text-bg-dark">
+                <img src="https://lanoticia.uai.com.br/wp-content/uploads/sites/15/2023/09/o-mma-no-brasil-1280x720.webp" />
+                <div class="card-body">
+                    <h4 class="card-title">MMA</h4>
+                    <p class="card-text">
+                        Veja aqui a temporada completa do MMA
+                    </p>
+                    <a href="#" class="btn btn-primary">Leia mais</a>
+                </div>
+                <footer class="card-footer">
+                    Postado em <time>10/08/2024 às 19h</time>
+                </footer>
+            </article>
+        </div>
+        <div class="col-4">
+            <div class="card text-bg-dark">
+                <img src="https://i0.wp.com/www.hawaiisurfpoint.com.br/wp-content/uploads/2016/12/skate-e-surf-agora-sao-modalidades-olimpicas-saiba-mais-sobre-a-decisao.jpeg?fit=1000%2C726&ssl=1" />
+                <div class="card-body">
+                    <h4 class="card-title">Surf</h4>
+                    <p class="card-text">
+                        Veja aqui a temporada completa do Surf
+                    </p>
+                    <a href="#" class="btn btn-primary">Botão link</a>
+                </div>
+                <footer class="card-footer">
+                    Postado em <time>10/08/2024 às 19h</time>
+                </footer>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-bg-dark">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gX0HMWXfFl8-SoSGigaBpgNPC02ESoYg1A&s" />
+                <div class="card-body">
+                    <h4 class="card-title">Skate</h4>
+                    <p class="card-text">
+                        Veja aqui a temporada completa do Skate
+                    </p>
+                    <a href="#" class="btn btn-primary">Botão link</a>
+                </div>
+                <footer class="card-footer">
+                    Postado em <time>10/08/2024 às 19h</time>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-4">
+        <div data-bs-autohide="true" class="toast" id="mensagem-alerta">
+            <header class="toast-header">
+                <strong>Importante</strong>
+            </header>
+            <div class="toast-body">
+                Você possui 10 mensagens não lidas
+                <div class="mt-2 pt-2 border-top">
+                    <button data-bs-dismiss="toast" class="btn btn-danger">Descartar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./lib/bootstrap.bundle.min.js"></script>
+<script>
+    const ativadorToast = document.getElementById('btn-checar-emails')
+    const mensagem = document.getElementById('mensagem-alerta')
+
+    if(ativadorToast){
+        ativadorToast.addEventListener('click', function(){
+            const toast = new bootstrap.Toast(mensagem)
+            toast.show()
+        })
+    }
+</script>
+</html>
